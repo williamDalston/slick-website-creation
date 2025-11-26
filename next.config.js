@@ -5,9 +5,9 @@ const nextConfig = {
     unoptimized: true, // Required for static export
   },
   trailingSlash: true,
-  // For GitHub Pages, uncomment and set basePath if deploying to a subdirectory
-  // basePath: process.env.NODE_ENV === 'production' ? '/slick-website-creation' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/slick-website-creation' : '',
+  // Set basePath for GitHub Pages (subdirectory deployment)
+  basePath: process.env.GITHUB_PAGES === 'true' ? '/slick-website-creation' : '',
+  assetPrefix: process.env.GITHUB_PAGES === 'true' ? '/slick-website-creation' : '',
 }
 
 module.exports = nextConfig
