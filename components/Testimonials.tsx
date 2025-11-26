@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import AnimatedGradientBackground from './AnimatedGradientBackground'
 
 const testimonials = [
   {
@@ -30,8 +31,9 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="section-padding bg-gray-950">
-      <div className="container-width">
+    <section ref={ref} className="section-padding bg-gray-950 relative overflow-hidden">
+      <AnimatedGradientBackground intensity="low" />
+      <div className="container-width relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Trusted by teams making data-driven decisions
@@ -44,8 +46,12 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:border-white/20 transition-all duration-300 group"
+              className="glass-card rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:glass-card-hover hover:border-white/20 transition-all duration-300 group relative overflow-hidden"
+              whileHover={{ scale: 1.02, y: -4 }}
             >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              />
               <div className="mb-6">
                 <svg
                   className="w-8 h-8 text-gray-600 mb-4 group-hover:text-gray-500 transition-colors"

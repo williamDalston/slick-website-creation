@@ -1,11 +1,14 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { CheckCircle2, CreditCard, Zap, ArrowRight } from 'lucide-react'
 import VideoBackground from './VideoBackground'
+import FloatingGradientOrbs from './FloatingGradientOrbs'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center">
+    <section className="relative min-h-screen flex items-center overflow-hidden">
+      <FloatingGradientOrbs />
       <VideoBackground
         src="/videos/hero-loop.mp4"
         poster="/videos/hero-poster.jpg"
@@ -22,7 +25,7 @@ export default function Hero() {
               A mission to end guesswork in digital decisions
             </p>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 text-balance leading-[1.1] tracking-tight">
-              Double the impact of every marketing dollar with AI-guided Decision
+              <span className="gradient-text-accent">Double the impact</span> of every marketing dollar with AI-guided Decision
               Briefs.
             </h1>
             <motion.p
@@ -41,7 +44,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
               className="flex flex-col sm:flex-row gap-4 mb-8"
             >
-              <a
+              <motion.a
                 href="#pricing"
                 onClick={(e) => {
                   e.preventDefault()
@@ -53,11 +56,26 @@ export default function Hero() {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                   }
                 }}
-                className="px-8 py-4 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black"
+                className="btn-primary inline-flex items-center justify-center gap-2 relative overflow-hidden group"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Get Early Access
-              </a>
-              <a
+                <span className="relative z-10">Get Early Access</span>
+                <motion.div
+                  className="relative z-10"
+                  animate={{ x: [0, 4, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </motion.div>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6 }}
+                />
+              </motion.a>
+              <motion.a
                 href="#waitlist"
                 onClick={(e) => {
                   e.preventDefault()
@@ -69,10 +87,18 @@ export default function Hero() {
                     window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                   }
                 }}
-                className="px-8 py-4 border border-white/30 text-white rounded-sm text-base font-semibold hover:bg-white/10 hover:border-white/50 active:bg-white/20 transition-all duration-300 inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black"
+                className="btn-secondary inline-flex items-center justify-center gap-2 relative overflow-hidden group"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Join the Waitlist
-              </a>
+                <span className="relative z-10">Join the Waitlist</span>
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                  initial={{ x: '-100%' }}
+                  whileHover={{ x: '100%' }}
+                  transition={{ duration: 0.6 }}
+                />
+              </motion.a>
             </motion.div>
             <motion.p
               initial={{ opacity: 0 }}
@@ -89,48 +115,48 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="flex flex-wrap items-center gap-6 text-sm text-gray-500"
             >
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1, type: 'spring', stiffness: 200, damping: 15 }}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                  <CheckCircle2 className="w-5 h-5 text-green-400" />
+                </motion.div>
                 <span>30-day guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1.1, type: 'spring', stiffness: 200, damping: 15 }}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                  <CreditCard className="w-5 h-5 text-green-400" />
+                </motion.div>
                 <span>No credit card required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <svg
-                  className="w-4 h-4 text-green-400"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+              >
+                <motion.div
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ delay: 1.2, type: 'spring', stiffness: 200, damping: 15 }}
                 >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
+                  <Zap className="w-5 h-5 text-green-400" />
+                </motion.div>
                 <span>Setup in 10 minutes</span>
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>

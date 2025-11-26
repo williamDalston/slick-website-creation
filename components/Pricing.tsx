@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import AnimatedGradientBackground from './AnimatedGradientBackground'
 
 const features = [
   'Daily Decision Briefs (web + email)',
@@ -18,11 +19,12 @@ export default function Pricing() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section id="pricing" ref={ref} className="section-padding bg-black">
-      <div className="container-width">
+    <section id="pricing" ref={ref} className="section-padding bg-black grid-pattern relative overflow-hidden">
+      <AnimatedGradientBackground intensity="low" />
+      <div className="container-width relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
-            Simple early-access pricing.
+            Simple <span className="gradient-text-accent">early-access</span> pricing.
           </h2>
         </div>
         <div className="max-w-2xl mx-auto">
@@ -65,12 +67,20 @@ export default function Pricing() {
                 </motion.li>
               ))}
             </ul>
-            <a
+            <motion.a
               href="#checkout"
-              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 mb-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 hover:scale-[1.02] hover:shadow-lg hover:shadow-white/20 active:scale-[0.98] active:bg-gray-200 transition-all duration-300 mb-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 relative overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
-              Get Early Access
-            </a>
+              <span className="relative z-10">Get Early Access</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '100%' }}
+                transition={{ duration: 0.6 }}
+              />
+            </motion.a>
             <p className="text-center text-gray-400 text-sm mb-4">
               30-day money-back guarantee • Cancel anytime • No credit card
               required

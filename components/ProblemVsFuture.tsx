@@ -46,7 +46,7 @@ export default function ProblemVsFuture() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-900/60 backdrop-blur-sm rounded-sm p-10 border border-red-500/20 card-shadow"
+            className="glass-card rounded-sm p-10 border border-red-500/20 card-shadow hover:glass-card-hover hover:scale-[1.02] transition-all duration-300"
           >
             <h3 className="text-3xl font-bold text-red-400 mb-8 leading-tight">
               The old way
@@ -74,7 +74,7 @@ export default function ProblemVsFuture() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-900/60 backdrop-blur-sm rounded-sm p-10 border border-green-500/30 card-shadow"
+            className="glass-card rounded-sm p-10 border border-green-500/30 card-shadow hover:glass-card-hover hover:scale-[1.02] transition-all duration-300"
           >
             <h3 className="text-3xl font-bold text-green-400 mb-8 leading-tight">
               The ClarityGrid way

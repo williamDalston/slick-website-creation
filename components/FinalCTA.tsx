@@ -3,14 +3,16 @@
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
+import AnimatedGradientBackground from './AnimatedGradientBackground'
 
 export default function FinalCTA() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-black to-gray-950">
-      <div className="container-width">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-black to-gray-950 grid-pattern relative overflow-hidden">
+      <AnimatedGradientBackground intensity="medium" />
+      <div className="container-width relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
@@ -18,7 +20,7 @@ export default function FinalCTA() {
           className="text-center max-w-4xl mx-auto"
         >
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-            The next best decision you make could start here.
+            The next <span className="gradient-text-accent">best decision</span> you make could start here.
           </h2>
           <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed">
             If you're running ads, campaigns, or content, you're already paying
@@ -41,7 +43,7 @@ export default function FinalCTA() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="px-8 py-4 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-950"
+              className="btn-primary hover:scale-105"
             >
               Get Early Access
             </a>
@@ -57,7 +59,7 @@ export default function FinalCTA() {
                   window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
                 }
               }}
-              className="px-8 py-4 border border-white/30 text-white rounded-sm text-base font-semibold hover:bg-white/10 hover:border-white/50 active:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-gray-950"
+              className="btn-secondary hover:scale-105"
             >
               Join the Waitlist
             </a>

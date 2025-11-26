@@ -50,11 +50,11 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="section-padding bg-black">
+    <section id="faq" className="section-padding bg-black grid-pattern relative">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-            Essential information
+            <span className="gradient-text-accent">Essential</span> information
           </h2>
         </div>
         <div className="max-w-3xl mx-auto">
@@ -66,7 +66,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 active:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-inset"
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 active:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-inset group"
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
