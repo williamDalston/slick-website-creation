@@ -50,7 +50,7 @@ export default function ValueMetrics() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-              className="text-center p-6 rounded-sm border border-white/5 hover:border-white/10 transition-all duration-300"
+              className="text-center p-6 rounded-sm border border-white/5 hover:border-white/10 hover:bg-white/5 transition-all duration-300"
             >
               <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-3">
                 {metric.value}

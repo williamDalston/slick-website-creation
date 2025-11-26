@@ -44,17 +44,17 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:border-white/20 transition-all duration-300"
+              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:border-white/20 transition-all duration-300 group"
             >
               <div className="mb-6">
                 <svg
-                  className="w-8 h-8 text-gray-600 mb-4"
+                  className="w-8 h-8 text-gray-600 mb-4 group-hover:text-gray-500 transition-colors"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.984zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
-                <p className="text-gray-200 text-lg leading-relaxed mb-6">
+                <p className="text-gray-200 text-lg leading-relaxed mb-6 group-hover:text-white transition-colors">
                   "{testimonial.quote}"
                 </p>
               </div>
@@ -62,7 +62,7 @@ export default function Testimonials() {
                 <p className="text-white font-semibold text-base">
                   {testimonial.author}
                 </p>
-                <p className="text-gray-400 text-sm">
+                <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
                   {testimonial.role}, {testimonial.company}
                 </p>
               </div>
