@@ -19,7 +19,7 @@ export default function Waitlist() {
     return re.test(email)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
     if (!email) {
@@ -33,12 +33,37 @@ export default function Waitlist() {
     }
     
     setError('')
-    // Handle waitlist submission here
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setEmail('')
-    }, 3000)
+    
+    try {
+      // Send email notification to faradaybach@gmail.com
+      // Using a simple approach - you can replace this with your preferred email service
+      const emailData = {
+        to: 'faradaybach@gmail.com',
+        subject: 'New Waitlist Signup - ClarityGrid',
+        body: `New waitlist signup:\n\nEmail: ${email}\nSource: Waitlist\nDate: ${new Date().toISOString()}`,
+      }
+      
+      // Log for now (in production, use a proper email service)
+      console.log('Email signup:', emailData)
+      
+      // You can integrate with:
+      // - Web3Forms: https://web3forms.com (free, no signup)
+      // - Formspree: https://formspree.io (free tier)
+      // - EmailJS: https://www.emailjs.com (free tier)
+      // - Or set up your own API endpoint
+      
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setEmail('')
+      }, 3000)
+    } catch (err) {
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        setEmail('')
+      }, 3000)
+    }
   }
 
   return (

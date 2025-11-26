@@ -7,19 +7,31 @@ export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    let timeoutId: NodeJS.Timeout
+    
     const toggleVisibility = () => {
+      // Clear any pending timeout
+      clearTimeout(timeoutId)
+      
       // Show after scrolling past hero, hide near bottom
       const scrollY = window.scrollY
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight
       const isNearBottom = scrollY + windowHeight > documentHeight - 200
+      const shouldShow = scrollY > windowHeight * 0.5 && !isNearBottom
       
-      setIsVisible(scrollY > windowHeight * 0.5 && !isNearBottom)
+      // Delay visibility changes for smoother transitions
+      timeoutId = setTimeout(() => {
+        setIsVisible(shouldShow)
+      }, 300)
     }
     
-    window.addEventListener('scroll', toggleVisibility)
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
     toggleVisibility()
-    return () => window.removeEventListener('scroll', toggleVisibility)
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility)
+      clearTimeout(timeoutId)
+    }
   }, [])
 
   const scrollToPricing = () => {
@@ -40,14 +52,19 @@ export default function FloatingCTA() {
       {isVisible && (
         <motion.div
           initial={{ y: 100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          animate={{ y: 0, opacity: 0.85 }}
           exit={{ y: 100, opacity: 0 }}
-          transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-          className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 md:hidden"
+          transition={{ 
+            type: 'spring', 
+            damping: 30, 
+            stiffness: 150,
+            opacity: { duration: 0.8 }
+          }}
+          className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 md:hidden pointer-events-auto"
         >
           <button
             onClick={scrollToPricing}
-            className="px-6 py-3 bg-white text-black rounded-full text-sm font-semibold shadow-xl hover:bg-gray-100 hover:scale-110 active:scale-95 active:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black flex items-center gap-2 pulse-glow"
+            className="px-5 py-2.5 bg-white/90 backdrop-blur-md text-black rounded-full text-sm font-semibold shadow-lg hover:bg-white hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 flex items-center gap-2 border border-white/20"
           >
             <span>Get Early Access</span>
             <svg

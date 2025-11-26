@@ -27,7 +27,7 @@ export default function SectionCluster({
   return (
     <section
       ref={ref}
-      className={`section-padding ${reverse ? 'bg-gray-950' : 'bg-black'}`}
+      className={`section-padding ${reverse ? 'bg-gray-950' : 'bg-black'} overflow-x-hidden`}
     >
       <div className="container-width">
         <div
