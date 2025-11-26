@@ -61,6 +61,12 @@ export default function FloatingCTA() {
             opacity: { duration: 0.8 }
           }}
           className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-40 md:hidden pointer-events-auto"
+          style={{ 
+            left: '50%',
+            transform: 'translateX(-50%)',
+            maxWidth: 'calc(100vw - 2rem)',
+            width: 'auto'
+          }}
         >
           <button
             onClick={scrollToPricing}

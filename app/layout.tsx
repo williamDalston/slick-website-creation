@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'ClarityGrid - Turn chaotic analytics into one daily Decision Brief',
@@ -18,8 +19,30 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased">{children}</body>
+    <html lang="en" className="scroll-smooth" style={{ overflowX: 'hidden', maxWidth: '100vw', width: '100%' }}>
+      <body className="antialiased" style={{ overflowX: 'hidden', maxWidth: '100vw', width: '100%' }}>
+        <Script id="prevent-horizontal-scroll" strategy="afterInteractive">
+          {`
+            (function() {
+              function preventHorizontalScroll() {
+                document.body.style.overflowX = 'hidden';
+                document.body.style.maxWidth = '100vw';
+                document.body.style.width = '100%';
+                document.documentElement.style.overflowX = 'hidden';
+                document.documentElement.style.maxWidth = '100vw';
+                document.documentElement.style.width = '100%';
+              }
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', preventHorizontalScroll);
+              } else {
+                preventHorizontalScroll();
+              }
+              window.addEventListener('resize', preventHorizontalScroll);
+            })();
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   )
 }

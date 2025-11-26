@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <SkipLink />
-      <main id="main-content" className="relative w-full max-w-full overflow-x-hidden">
+      <main id="main-content" className="relative w-full max-w-full overflow-x-hidden" style={{ width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
         <ScrollProgress />
         <Nav />
         <BackToTop />

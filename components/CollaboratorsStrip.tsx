@@ -26,9 +26,9 @@ export default function CollaboratorsStrip() {
             fragmented metrics into a single narrative.
           </p>
         </div>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full max-w-full" style={{ position: 'relative', width: '100%', maxWidth: '100vw' }}>
           <motion.div
-            className="flex gap-8 w-max"
+            className="flex gap-8"
             animate={{
               x: [0, -50 * integrations.length * 10],
             }}
@@ -37,7 +37,11 @@ export default function CollaboratorsStrip() {
               repeat: Infinity,
               ease: 'linear',
             }}
-            style={{ willChange: 'transform' }}
+            style={{ 
+              willChange: 'transform',
+              width: 'max-content',
+              maxWidth: 'none'
+            }}
           >
             {[...integrations, ...integrations, ...integrations].map(
               (integration, index) => (
