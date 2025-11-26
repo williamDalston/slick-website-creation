@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <SkipLink />
-      <main id="main-content" className="relative">
+      <main id="main-content" className="relative w-full max-w-full overflow-x-hidden">
         <ScrollProgress />
         <Nav />
         <BackToTop />
@@ -31,7 +31,7 @@ export default function Home() {
       <CollaboratorsStrip />
       
       {/* Domains cluster section */}
-      <section id="product" className="bg-black">
+      <section id="product" className="bg-black w-full max-w-full overflow-x-hidden">
         <div className="section-padding">
           <div className="container-width text-center mb-20">
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">

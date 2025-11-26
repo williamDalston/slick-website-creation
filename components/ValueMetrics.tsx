@@ -37,7 +37,7 @@ export default function ValueMetrics() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="section-padding bg-black">
+    <section ref={ref} className="section-padding bg-black w-full max-w-full overflow-x-hidden">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">

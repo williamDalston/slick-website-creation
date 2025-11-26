@@ -64,7 +64,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full max-w-full overflow-x-hidden ${
           scrolled
             ? 'bg-black/90 backdrop-blur-lg py-4 border-b border-white/5'
             : 'bg-transparent py-8'
@@ -164,7 +164,7 @@ export default function Nav() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-black border-l border-white/10 z-40 md:hidden overflow-y-auto"
+              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-black border-l border-white/10 z-40 md:hidden overflow-y-auto overflow-x-hidden"
             >
               <div className="p-8 pt-24">
                 <nav className="flex flex-col gap-6">

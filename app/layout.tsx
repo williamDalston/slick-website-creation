@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: 'ClarityGrid - Turn chaotic analytics into one daily Decision Brief',
   description: 'ClarityGrid connects your web and social analytics, runs an AI analysis pipeline, and sends you a daily, human-readable Decision Brief with 3–5 concrete actions to take.',
   keywords: 'analytics, AI, decision brief, marketing analytics, data insights',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
 }
 
 export default function RootLayout({

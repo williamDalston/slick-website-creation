@@ -37,7 +37,7 @@ export default function HowItWorks() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section id="how-it-works" ref={ref} className="section-padding bg-black grid-pattern relative">
+    <section id="how-it-works" ref={ref} className="section-padding bg-black grid-pattern relative w-full max-w-full overflow-x-hidden">
       <div className="container-width">
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">

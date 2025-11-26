@@ -19,7 +19,7 @@ export default function Pricing() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section id="pricing" ref={ref} className="section-padding bg-black grid-pattern relative overflow-hidden">
+    <section id="pricing" ref={ref} className="section-padding bg-black grid-pattern relative overflow-hidden w-full max-w-full overflow-x-hidden">
       <AnimatedGradientBackground intensity="low" />
       <div className="container-width relative z-10">
         <div className="text-center mb-16">

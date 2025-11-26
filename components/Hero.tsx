@@ -7,7 +7,7 @@ import FloatingGradientOrbs from './FloatingGradientOrbs'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden w-full max-w-full">
       <FloatingGradientOrbs />
       <VideoBackground
         src="/videos/hero-loop.mp4"

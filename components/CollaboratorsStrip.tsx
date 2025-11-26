@@ -15,7 +15,7 @@ const integrations = [
 
 export default function CollaboratorsStrip() {
   return (
-    <section className="section-padding bg-black">
+    <section className="section-padding bg-black w-full max-w-full overflow-x-hidden">
       <div className="container-width">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
@@ -28,7 +28,7 @@ export default function CollaboratorsStrip() {
         </div>
         <div className="overflow-hidden">
           <motion.div
-            className="flex gap-8"
+            className="flex gap-8 w-max"
             animate={{
               x: [0, -50 * integrations.length * 10],
             }}
@@ -37,6 +37,7 @@ export default function CollaboratorsStrip() {
               repeat: Infinity,
               ease: 'linear',
             }}
+            style={{ willChange: 'transform' }}
           >
             {[...integrations, ...integrations, ...integrations].map(
               (integration, index) => (

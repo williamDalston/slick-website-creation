@@ -23,7 +23,7 @@ export default function ProblemVsFuture() {
   ]
 
   return (
-    <section ref={ref} className="relative min-h-[600px] flex items-center overflow-hidden">
+    <section ref={ref} className="relative min-h-[600px] flex items-center overflow-hidden w-full max-w-full overflow-x-hidden">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <motion.video
           autoPlay

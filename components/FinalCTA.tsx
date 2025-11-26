@@ -10,7 +10,7 @@ export default function FinalCTA() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-black to-gray-950 grid-pattern relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-black to-gray-950 grid-pattern relative overflow-hidden w-full max-w-full overflow-x-hidden">
       <AnimatedGradientBackground intensity="medium" />
       <div className="container-width relative z-10">
         <motion.div

@@ -31,7 +31,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <section ref={ref} className="section-padding bg-gray-950 relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gray-950 relative overflow-hidden w-full max-w-full overflow-x-hidden">
       <AnimatedGradientBackground intensity="low" />
       <div className="container-width relative z-10">
         <div className="text-center mb-16">

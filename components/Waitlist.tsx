@@ -67,7 +67,7 @@ export default function Waitlist() {
   }
 
   return (
-    <section id="waitlist" ref={ref} className="section-padding bg-gray-950 grid-pattern relative overflow-hidden">
+    <section id="waitlist" ref={ref} className="section-padding bg-gray-950 grid-pattern relative overflow-hidden w-full max-w-full overflow-x-hidden">
       <AnimatedGradientBackground intensity="low" />
       <div className="container-width relative z-10">
         <motion.div
