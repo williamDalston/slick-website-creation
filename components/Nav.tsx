@@ -71,7 +71,7 @@ export default function Nav() {
         }`}
       >
         <div className="container-width px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full">
             <a
               href="#"
               onClick={(e) => {
@@ -164,31 +164,40 @@ export default function Nav() {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-black border-l border-white/10 z-40 md:hidden overflow-y-auto overflow-x-hidden"
+              className="fixed top-0 right-0 bottom-0 w-[85vw] max-w-sm bg-black/95 backdrop-blur-xl border-l border-white/10 z-40 md:hidden overflow-y-auto overflow-x-hidden shadow-2xl"
             >
-              <div className="p-8 pt-24">
-                <nav className="flex flex-col gap-6">
+              <div className="p-6 pt-20">
+                <nav className="flex flex-col gap-1">
                   {navLinks.map((link) => (
                     <a
                       key={link.href}
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className={`text-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm px-3 py-2 ${
+                      className={`text-base font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-sm px-4 py-3 relative ${
                         activeSection === link.id
-                          ? 'text-white'
-                          : 'text-gray-300 hover:text-white'
+                          ? 'text-white bg-white/5'
+                          : 'text-gray-300 hover:text-white hover:bg-white/5'
                       }`}
                     >
                       {link.label}
+                      {activeSection === link.id && (
+                        <motion.div
+                          className="absolute left-0 top-0 bottom-0 w-1 bg-white"
+                          layoutId="mobileActiveSection"
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
                     </a>
                   ))}
-                  <a
-                    href="#pricing"
-                    onClick={(e) => handleNavClick(e, '#pricing')}
-                    className="px-6 py-3 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 hover:scale-105 active:scale-95 active:bg-gray-200 transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-white"
-                  >
-                    Get Early Access
-                  </a>
+                  <div className="pt-4 mt-2 border-t border-white/10">
+                    <a
+                      href="#pricing"
+                      onClick={(e) => handleNavClick(e, '#pricing')}
+                      className="block w-full px-6 py-3 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 text-center focus:outline-none focus:ring-2 focus:ring-white"
+                    >
+                      Get Early Access
+                    </a>
+                  </div>
                 </nav>
               </div>
             </motion.div>
