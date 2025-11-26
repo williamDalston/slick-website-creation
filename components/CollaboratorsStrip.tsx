@@ -17,11 +17,11 @@ export default function CollaboratorsStrip() {
   return (
     <section className="section-padding bg-black">
       <div className="container-width">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
             Connect the tools you already use.
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             ClarityGrid plugs into your existing analytics stack and turns
             fragmented metrics into a single narrative.
           </p>
@@ -42,9 +42,9 @@ export default function CollaboratorsStrip() {
               (integration, index) => (
                 <div
                   key={`${integration}-${index}`}
-                  className="flex-shrink-0 px-6 py-3 bg-gray-900 rounded-lg border border-gray-800"
+                  className="flex-shrink-0 px-8 py-4 bg-gray-900/50 backdrop-blur-sm rounded-sm border border-white/10 card-shadow"
                 >
-                  <span className="text-gray-300 text-sm font-medium whitespace-nowrap">
+                  <span className="text-gray-200 text-base font-medium whitespace-nowrap">
                     {integration}
                   </span>
                 </div>

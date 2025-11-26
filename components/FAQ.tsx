@@ -52,8 +52,8 @@ export default function FAQ() {
   return (
     <section id="faq" className="section-padding bg-black">
       <div className="container-width">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
             Essential information
           </h2>
         </div>
@@ -62,14 +62,14 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden"
+                className="bg-gray-900/50 backdrop-blur-sm rounded-sm border border-white/10 card-shadow overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-800/50 transition-colors"
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="text-lg font-semibold text-white pr-4">
+                  <span className="text-xl font-semibold text-white pr-4 leading-relaxed">
                     {faq.question}
                   </span>
                   <motion.svg
@@ -97,7 +97,7 @@ export default function FAQ() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 py-4 text-gray-400 leading-relaxed">
+                      <div className="px-8 py-6 text-gray-300 leading-relaxed text-lg">
                         {faq.answer}
                       </div>
                     </motion.div>

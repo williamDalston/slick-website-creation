@@ -39,13 +39,13 @@ export default function SectionCluster({
             className="flex-1"
             initial={{ opacity: 0, x: reverse ? 50 : -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: reverse ? 50 : -50 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
               {title}
             </h3>
-            <p className="text-lg text-gray-400 mb-4">{subtitle}</p>
-            <p className="text-base text-gray-500 leading-relaxed">
+            <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed">{subtitle}</p>
+            <p className="text-lg text-gray-400 leading-relaxed">
               {description}
             </p>
           </motion.div>
@@ -53,10 +53,10 @@ export default function SectionCluster({
             className="flex-1 w-full"
             initial={{ opacity: 0, x: reverse ? -50 : 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: reverse ? -50 : 50 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
             {videoSrc ? (
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow">
                 <video
                   autoPlay
                   muted
@@ -70,7 +70,7 @@ export default function SectionCluster({
                 </video>
               </div>
             ) : imageSrc ? (
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gray-900">
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow">
                 <img
                   src={imageSrc}
                   alt={title}
@@ -78,8 +78,8 @@ export default function SectionCluster({
                 />
               </div>
             ) : (
-              <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center">
-                <span className="text-gray-600">Visual placeholder</span>
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gradient-to-br from-gray-900 to-black card-shadow flex items-center justify-center border border-white/5">
+                <span className="text-gray-500">Visual placeholder</span>
               </div>
             )}
           </motion.div>

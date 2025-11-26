@@ -28,12 +28,12 @@ export default function Waitlist() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto text-center"
+          className="max-w-3xl mx-auto text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
             Join the Waitlist
           </h2>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-10 leading-relaxed">
             Be the first to know when ClarityGrid launches. We'll send you
             updates and early access opportunities.
           </p>
@@ -44,11 +44,11 @@ export default function Waitlist() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
-              className="flex-1 px-6 py-4 bg-gray-900 border border-gray-800 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-gray-700"
+              className="flex-1 px-6 py-4 bg-gray-900/50 backdrop-blur-sm border border-white/10 rounded-sm text-white placeholder-gray-500 focus:outline-none focus:border-white/30 transition-all duration-300"
             />
             <button
               type="submit"
-              className="px-8 py-4 bg-white text-black rounded-md font-semibold hover:bg-gray-100 transition-colors"
+              className="px-8 py-4 bg-white text-black rounded-sm font-semibold hover:bg-gray-100 transition-all duration-300"
             >
               {submitted ? '✓ Joined!' : 'Join Waitlist'}
             </button>

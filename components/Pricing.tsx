@@ -18,8 +18,8 @@ export default function Pricing() {
   return (
     <section id="pricing" ref={ref} className="section-padding bg-black">
       <div className="container-width">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
             Simple early-access pricing.
           </h2>
         </div>
@@ -27,23 +27,23 @@ export default function Pricing() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-gray-900 to-black rounded-xl p-8 md:p-12 border border-gray-800"
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm rounded-sm p-10 md:p-14 border border-white/10 card-shadow"
           >
-            <div className="mb-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+            <div className="mb-8">
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
                 ClarityGrid Launch Pass
               </h3>
-              <p className="text-gray-400 text-lg">
+              <p className="text-gray-300 text-xl">
                 For teams who want signal, not noise.
               </p>
             </div>
-            <div className="mb-8">
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl md:text-6xl font-bold text-white">
+            <div className="mb-10">
+              <div className="flex items-baseline gap-3">
+                <span className="text-6xl md:text-7xl font-bold text-white tracking-tight">
                   $49
                 </span>
-                <span className="text-gray-400 text-xl">/month</span>
+                <span className="text-gray-400 text-2xl">/month</span>
               </div>
             </div>
             <ul className="space-y-4 mb-8">
@@ -64,7 +64,7 @@ export default function Pricing() {
             </ul>
             <a
               href="#checkout"
-              className="block w-full text-center px-8 py-4 bg-white text-black rounded-md text-base font-semibold hover:bg-gray-100 transition-all transform hover:scale-105"
+              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 transition-all duration-300"
             >
               Get Early Access
             </a>

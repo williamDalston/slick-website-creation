@@ -22,17 +22,17 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-black/80 backdrop-blur-md py-4'
-          : 'bg-transparent py-6'
+          ? 'bg-black/90 backdrop-blur-lg py-4 border-b border-white/5'
+          : 'bg-transparent py-8'
       }`}
     >
       <div className="container-width px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <a
             href="#"
-            className="text-xl font-semibold tracking-tight text-white hover:text-gray-200 transition-colors"
+            className="text-2xl font-bold tracking-tight text-white hover:text-gray-200 transition-colors"
           >
             ClarityGrid
           </a>
@@ -48,7 +48,7 @@ export default function Nav() {
             ))}
             <a
               href="#pricing"
-              className="px-4 py-2 bg-white text-black rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
+              className="px-5 py-2.5 bg-white text-black rounded-sm text-sm font-semibold hover:bg-gray-100 transition-all duration-300"
             >
               Get Early Access
             </a>

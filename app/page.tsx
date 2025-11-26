@@ -20,8 +20,8 @@ export default function Home() {
       {/* Domains cluster section */}
       <section id="product" className="bg-black">
         <div className="section-padding">
-          <div className="container-width text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="container-width text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
               From chaos to clarity across your funnel.
             </h2>
           </div>

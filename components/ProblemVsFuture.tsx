@@ -44,9 +44,9 @@ export default function ProblemVsFuture() {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 border border-gray-800"
+            className="bg-gray-900/60 backdrop-blur-sm rounded-sm p-10 border border-red-500/20 card-shadow"
           >
-            <h3 className="text-2xl font-bold text-red-400 mb-6">
+            <h3 className="text-3xl font-bold text-red-400 mb-8 leading-tight">
               The old way
             </h3>
             <ul className="space-y-4">
@@ -60,9 +60,9 @@ export default function ProblemVsFuture() {
                       : { opacity: 0, x: -20 }
                   }
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-start gap-3 text-gray-300"
+                  className="flex items-start gap-4 text-gray-200 text-lg"
                 >
-                  <span className="text-red-400 mt-1">×</span>
+                  <span className="text-red-400 mt-1 text-xl">×</span>
                   <span>{item}</span>
                 </motion.li>
               ))}
@@ -72,9 +72,9 @@ export default function ProblemVsFuture() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 border border-green-500/30"
+            className="bg-gray-900/60 backdrop-blur-sm rounded-sm p-10 border border-green-500/30 card-shadow"
           >
-            <h3 className="text-2xl font-bold text-green-400 mb-6">
+            <h3 className="text-3xl font-bold text-green-400 mb-8 leading-tight">
               The ClarityGrid way
             </h3>
             <ul className="space-y-4">
@@ -86,9 +86,9 @@ export default function ProblemVsFuture() {
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 20 }
                   }
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-start gap-3 text-gray-300"
+                  className="flex items-start gap-4 text-gray-200 text-lg"
                 >
-                  <span className="text-green-400 mt-1">✓</span>
+                  <span className="text-green-400 mt-1 text-xl">✓</span>
                   <span>{item}</span>
                 </motion.li>
               ))}

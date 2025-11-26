@@ -34,8 +34,8 @@ export default function HowItWorks() {
   return (
     <section id="how-it-works" ref={ref} className="section-padding bg-black">
       <div className="container-width">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
             How ClarityGrid works behind the scenes.
           </h2>
         </div>
@@ -45,16 +45,16 @@ export default function HowItWorks() {
               key={step.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-900 rounded-lg p-6 border border-gray-800"
+              transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover transition-all duration-300 group"
             >
-              <div className="text-3xl font-bold text-gray-600 mb-4">
+              <div className="text-4xl font-bold text-gray-500 mb-6 group-hover:text-gray-400 transition-colors">
                 {String(index + 1).padStart(2, '0')}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3">
+              <h3 className="text-2xl font-bold text-white mb-4 leading-tight">
                 {step.title}
               </h3>
-              <p className="text-gray-400 leading-relaxed">{step.description}</p>
+              <p className="text-gray-300 leading-relaxed text-lg">{step.description}</p>
             </motion.div>
           ))}
         </div>
