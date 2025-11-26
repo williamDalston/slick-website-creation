@@ -33,7 +33,9 @@ export default function ParticleBackground() {
               enable: true,
               mode: 'repulse',
             },
-            resize: true,
+            resize: {
+              enable: true,
+            },
           },
           modes: {
             push: {
