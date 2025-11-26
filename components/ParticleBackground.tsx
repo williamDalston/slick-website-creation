@@ -7,19 +7,9 @@ import type { Engine } from '@tsparticles/engine'
 import { useEffect, useState } from 'react'
 
 export default function ParticleBackground() {
-  const [init, setInit] = useState(false)
-
-  useEffect(() => {
-    loadSlim().then(() => {
-      setInit(true)
-    })
-  }, [])
-
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine)
   }, [])
-
-  if (!init) return null
 
   return (
     <Particles
