@@ -3,8 +3,11 @@ import Hero from '@/components/Hero'
 import CollaboratorsStrip from '@/components/CollaboratorsStrip'
 import SectionCluster from '@/components/SectionCluster'
 import HowItWorks from '@/components/HowItWorks'
+import ValueMetrics from '@/components/ValueMetrics'
 import ProblemVsFuture from '@/components/ProblemVsFuture'
+import Testimonials from '@/components/Testimonials'
 import Pricing from '@/components/Pricing'
+import TrustBadges from '@/components/TrustBadges'
 import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
 import Waitlist from '@/components/Waitlist'
@@ -46,8 +49,11 @@ export default function Home() {
       </section>
 
       <HowItWorks />
+      <ValueMetrics />
       <ProblemVsFuture />
+      <Testimonials />
       <Pricing />
+      <TrustBadges />
       <FAQ />
       <FinalCTA />
       <Waitlist />

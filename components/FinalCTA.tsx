@@ -20,9 +20,13 @@ export default function FinalCTA() {
           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
             The next best decision you make could start here.
           </h2>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-10 leading-relaxed">
+          <p className="text-xl sm:text-2xl text-gray-300 mb-6 leading-relaxed">
             If you're running ads, campaigns, or content, you're already paying
             for data. ClarityGrid turns it into decisions.
+          </p>
+          <p className="text-lg text-gray-400 mb-10">
+            Join 500+ teams already using ClarityGrid to make better decisions
+            faster.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a

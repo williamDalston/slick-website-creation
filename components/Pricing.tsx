@@ -9,6 +9,8 @@ const features = [
   'Connect up to 5 data sources',
   'Up to 3 team members',
   'Priority onboarding call',
+  '30-day money-back guarantee',
+  'Cancel anytime, no questions asked',
 ]
 
 export default function Pricing() {
@@ -64,10 +66,14 @@ export default function Pricing() {
             </ul>
             <a
               href="#checkout"
-              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 transition-all duration-300"
+              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 transition-all duration-300 mb-4"
             >
               Get Early Access
             </a>
+            <p className="text-center text-gray-400 text-sm mb-4">
+              30-day money-back guarantee • Cancel anytime • No credit card
+              required
+            </p>
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}

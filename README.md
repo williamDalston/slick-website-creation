@@ -113,3 +113,4 @@ Animations use Framer Motion. Adjust timing and effects in individual components
 
 This project is private and proprietary.
 
+
