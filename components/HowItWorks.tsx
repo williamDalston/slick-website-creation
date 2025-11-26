@@ -46,7 +46,7 @@ export default function HowItWorks() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover transition-all duration-300 group"
+              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:border-white/20 transition-all duration-300 group cursor-default"
             >
               <div className="text-4xl font-bold text-gray-500 mb-6 group-hover:text-gray-400 transition-colors">
                 {String(index + 1).padStart(2, '0')}

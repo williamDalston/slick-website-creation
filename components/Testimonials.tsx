@@ -44,7 +44,7 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
-              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow"
+              className="bg-gray-900/50 backdrop-blur-sm rounded-sm p-8 border border-white/10 card-shadow hover:card-shadow-hover hover:border-white/20 transition-all duration-300"
             >
               <div className="mb-6">
                 <svg

@@ -1,4 +1,7 @@
 import Nav from '@/components/Nav'
+import ScrollProgress from '@/components/ScrollProgress'
+import BackToTop from '@/components/BackToTop'
+import FloatingCTA from '@/components/FloatingCTA'
 import Hero from '@/components/Hero'
 import CollaboratorsStrip from '@/components/CollaboratorsStrip'
 import SectionCluster from '@/components/SectionCluster'
@@ -13,11 +16,18 @@ import FinalCTA from '@/components/FinalCTA'
 import Waitlist from '@/components/Waitlist'
 import Footer from '@/components/Footer'
 
+import SkipLink from '@/components/SkipLink'
+
 export default function Home() {
   return (
-    <main className="relative">
-      <Nav />
-      <Hero />
+    <>
+      <SkipLink />
+      <main id="main-content" className="relative">
+        <ScrollProgress />
+        <Nav />
+        <BackToTop />
+        <FloatingCTA />
+        <Hero />
       <CollaboratorsStrip />
       
       {/* Domains cluster section */}
@@ -58,7 +68,8 @@ export default function Home() {
       <FinalCTA />
       <Waitlist />
       <Footer />
-    </main>
+      </main>
+    </>
   )
 }
 

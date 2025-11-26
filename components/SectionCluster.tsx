@@ -56,30 +56,33 @@ export default function SectionCluster({
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           >
             {videoSrc ? (
-              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow">
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow group">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
                   preload="metadata"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   aria-hidden="true"
                 >
                   <source src={videoSrc} type="video/mp4" />
                 </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ) : imageSrc ? (
-              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow">
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gray-900 card-shadow group">
                 <img
                   src={imageSrc}
                   alt={title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ) : (
-              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gradient-to-br from-gray-900 to-black card-shadow flex items-center justify-center border border-white/5">
-                <span className="text-gray-500">Visual placeholder</span>
+              <div className="relative w-full aspect-video rounded-sm overflow-hidden bg-gradient-to-br from-gray-900 to-black card-shadow flex items-center justify-center border border-white/5 group hover:border-white/10 transition-colors">
+                <span className="text-gray-500 group-hover:text-gray-400 transition-colors">Visual placeholder</span>
               </div>
             )}
           </motion.div>

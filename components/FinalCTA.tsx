@@ -31,13 +31,33 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="#pricing"
-              className="px-8 py-4 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 transition-all duration-300"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector('#pricing')
+                if (element) {
+                  const offset = 80
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - offset
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                }
+              }}
+              className="px-8 py-4 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-950"
             >
               Get Early Access
             </a>
             <a
               href="#waitlist"
-              className="px-8 py-4 border border-white/30 text-white rounded-sm text-base font-semibold hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              onClick={(e) => {
+                e.preventDefault()
+                const element = document.querySelector('#waitlist')
+                if (element) {
+                  const offset = 80
+                  const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
+                  const offsetPosition = elementPosition - offset
+                  window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+                }
+              }}
+              className="px-8 py-4 border border-white/30 text-white rounded-sm text-base font-semibold hover:bg-white/10 hover:border-white/50 active:bg-white/20 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-gray-950"
             >
               Join the Waitlist
             </a>

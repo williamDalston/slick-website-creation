@@ -23,9 +23,9 @@ export default function ProblemVsFuture() {
   ]
 
   return (
-    <section ref={ref} className="relative min-h-[600px] flex items-center">
+    <section ref={ref} className="relative min-h-[600px] flex items-center overflow-hidden">
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <video
+        <motion.video
           autoPlay
           muted
           loop
@@ -33,9 +33,11 @@ export default function ProblemVsFuture() {
           preload="metadata"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
           aria-hidden="true"
+          animate={isInView ? { scale: 1.1 } : { scale: 1 }}
+          transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
         >
           <source src="/videos/ai-orbit.mp4" type="video/mp4" />
-        </video>
+        </motion.video>
         <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="relative z-10 container-width px-4 sm:px-6 lg:px-8 py-24">

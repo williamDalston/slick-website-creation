@@ -62,23 +62,24 @@ export default function FAQ() {
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-gray-900/50 backdrop-blur-sm rounded-sm border border-white/10 card-shadow overflow-hidden"
+                className="glass-card rounded-sm border border-white/10 card-shadow overflow-hidden hover:glass-card-hover transition-all duration-300"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-300"
+                  className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 active:bg-white/10 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-inset"
                   aria-expanded={openIndex === index}
+                  aria-controls={`faq-answer-${index}`}
                 >
                   <span className="text-xl font-semibold text-white pr-4 leading-relaxed">
                     {faq.question}
                   </span>
                   <motion.svg
-                    className="w-5 h-5 text-gray-400 flex-shrink-0"
+                    className="w-5 h-5 text-gray-400 group-hover:text-white flex-shrink-0 transition-colors"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
                     animate={{ rotate: openIndex === index ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
                   >
                     <path
                       strokeLinecap="round"
@@ -96,6 +97,8 @@ export default function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
+                      id={`faq-answer-${index}`}
+                      role="region"
                     >
                       <div className="px-8 py-6 text-gray-300 leading-relaxed text-lg">
                         {faq.answer}

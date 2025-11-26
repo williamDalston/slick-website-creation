@@ -42,7 +42,7 @@ export default function CollaboratorsStrip() {
               (integration, index) => (
                 <div
                   key={`${integration}-${index}`}
-                  className="flex-shrink-0 px-8 py-4 bg-gray-900/50 backdrop-blur-sm rounded-sm border border-white/10 card-shadow"
+                  className="flex-shrink-0 px-8 py-4 bg-gray-900/50 backdrop-blur-sm rounded-sm border border-white/10 card-shadow hover:border-white/20 hover:card-shadow-hover transition-all duration-300"
                 >
                   <span className="text-gray-200 text-base font-medium whitespace-nowrap">
                     {integration}

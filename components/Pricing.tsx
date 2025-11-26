@@ -30,8 +30,9 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="bg-gradient-to-br from-gray-900/80 to-black/80 backdrop-blur-sm rounded-sm p-10 md:p-14 border border-white/10 card-shadow"
+            className="glass-card bg-gradient-to-br from-gray-900/80 via-gray-900/60 to-black/80 rounded-sm p-10 md:p-14 border border-white/10 card-shadow hover:glass-card-hover hover:scale-[1.01] transition-all duration-500 relative overflow-hidden group"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             <div className="mb-8">
               <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">
                 ClarityGrid Launch Pass
@@ -57,16 +58,16 @@ export default function Pricing() {
                     isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
                   }
                   transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className="flex items-start gap-3 text-gray-300"
+                  className="flex items-start gap-3 text-gray-300 group"
                 >
-                  <span className="text-green-400 mt-1">✓</span>
-                  <span>{feature}</span>
+                  <span className="text-green-400 mt-1 text-lg group-hover:scale-110 transition-transform">✓</span>
+                  <span className="group-hover:text-white transition-colors">{feature}</span>
                 </motion.li>
               ))}
             </ul>
             <a
               href="#checkout"
-              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 transition-all duration-300 mb-4"
+              className="block w-full text-center px-8 py-5 bg-white text-black rounded-sm text-base font-semibold hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 mb-4 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900"
             >
               Get Early Access
             </a>
